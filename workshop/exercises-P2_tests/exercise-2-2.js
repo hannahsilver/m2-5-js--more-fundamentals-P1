@@ -8,14 +8,21 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  // Your code here
+  const splitString = str.split("");
+  const reverseArr = splitString.reverse();
+  const firstItem = reverseArr[0];
+  return firstItem;
 }
 
 // Step 2
 // You're given 1 test case. Add 4 more, making sure to cover all of the
 // conditions specified above (don't forget empty string and number!!)
 
-expect(lastCharacter('max'), 'x');
+expect(lastCharacter("max"), "x");
+expect(lastCharacter("jeremy"), "y");
+expect(lastCharacter("racecar"), "r");
+expect(lastCharacter("philbert"), "t");
+expect(lastCharacter(""), undefined);
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
@@ -34,7 +41,7 @@ expect(lastCharacter('max'), 'x');
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
