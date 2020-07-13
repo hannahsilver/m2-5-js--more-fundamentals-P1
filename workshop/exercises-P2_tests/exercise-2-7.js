@@ -12,11 +12,11 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  let string = arr[0];
-  let num = arr[1];
+  const string = arr[0];
+  const num = arr[1];
 
   if (typeof string !== "string" || typeof num !== "number") return undefined;
-  if (num < 0) return "";
+  if (num <= 0) return "";
 
   let newString = "";
 
@@ -24,22 +24,24 @@ function repeat(arr) {
     newString = newString + string;
   }
 
-  console.log(newString);
-
   return newString;
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
 
-expect(repeat(["hello", 2], "hellohello"));
-expect(repeat(["meow", 5], "meowmeowmeowmeow"));
-expect(repeat([13, 7], undefined));
+expect(repeat(["hello", 2]), "hellohello");
+expect(repeat(["meow", 5]), "meowmeowmeowmeowmeow");
+expect(repeat([13, 7]), undefined);
+expect(repeat(["hello", -1]), "");
+expect(repeat([9, "hello"]), undefined);
+expect(repeat(["meow", 1]), "meow");
+expect(repeat(["meow", -5]), "");
 
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
- * -------------------------------------------------------------------
+ * ---------------------------------------------------------------s----
  */
 function expect(result, value) {
   if (result === value) {
