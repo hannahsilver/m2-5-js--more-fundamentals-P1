@@ -11,22 +11,22 @@ const buttonList = document.querySelector("#btn-list");
 
 const buttonClick = (e) => {
   const buttonId = e.target.id;
-  const buttonElement = document.getElementById(buttonId);
+  const button = document.getElementById(buttonId);
 
   switch (buttonId) {
     case "btn-1":
-      buttonElement.style.opacity = 0;
+      button.style.opacity = 0;
       break;
 
     case "btn-2":
-      buttonElement.style.background = "crimson";
+      button.style.background = "crimson";
       break;
 
     case "btn-3":
-      buttonElement.style.background = "lightblue";
+      button.style.background = "lightblue";
       break;
     case "btn-4":
-      buttonElement.classList.add("jitters");
+      button.classList.add("jitters");
       break;
     default:
       break;
